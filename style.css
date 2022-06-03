@@ -107,14 +107,52 @@ header {
     width: 180px; 
  }
 
- main {
-     padding: 30px;
-     width: 100vw;
- }
+ /* MAIN */
 
- main img {
-     width: 100%;
- }
+ main h2 {
+    padding: 20px;
+    text-align: center;
+    margin: 60px;
+    font-size: 2rem;
+}
+
+/* ------banner-outono-------- */
+
+.banner-outono {
+    height: 600px;
+    justify-content: center;
+    border: 1px solid blue
+}  
+
+.banner-outono img {
+    height: 600px;
+    width: 100%;
+}
+
+/* ---------galeria-------- */
+
+.galeria {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-image: linear-gradient(to left, rgb(25, 64, 86), rgb(136, 105, 196 ));
+} 
+
+.galeria img {
+    padding: 10px;
+    margin: 10px;
+}
+
+.galeria img:hover {
+    background-color: white;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+/*--------Mexe aqui Gustavo---------*/
+
+
+/*--------Até aqui Gustavo--------*/
 
  /* FOOTER */
 
