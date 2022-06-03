@@ -150,8 +150,14 @@ header {
 }
 
 /*--------Mexe aqui Gustavo---------*/
+.sobreNos {
+    display: flex;
 
+}
 
+.quemsomos {
+    text-align: center;
+}
 /*--------Até aqui Gustavo--------*/
 
  /* FOOTER */
