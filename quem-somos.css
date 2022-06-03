@@ -1,0 +1,20 @@
+
+h3{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(80, 80, 73);
+    text-align:left;
+    margin-right: 5%;
+}
+h4{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(80, 80, 73);
+    text-align: center;
+    margin-right: 5%;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(122, 122, 119);
+    margin-right: 3%; 
+    text-align: center;
+}
