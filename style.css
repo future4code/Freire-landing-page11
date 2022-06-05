@@ -7,105 +7,87 @@
     /* #B5AB92 */
 }
 
+/* body {
+    min-width: 950px;
+} */
+
 /* Cabeçalho */
 
 header {
-    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 0.75fr 1.5fr 0.75fr;
     background-color: #DAE5E7;
-    height: 120px;
     width: 100vw;
+    overflow: hidden;
 }
 
-/* Links do cabeçalho */
-
-.header-links {
+/* Parte esquerda */
+.header-esq {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
-}
-
-.header-esq ul {
-    display: flex;
-    list-style: none;
+    justify-content: space-evenly;
     font-weight: bold;
-}
-
-.header-esq ul a {
-    text-decoration: none;
     text-transform: uppercase;
-    margin-right: 30px;
-    margin-left: 10px;
-    border-radius: 5px;
 }
 
-.header-esq ul li {
-    padding: 1.3em;
+.header-esq a {
+    text-decoration: none;
     height: 100%;
-    width: 100%;
-    border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
 }
 
-.header-esq ul li:hover {
+.header-esq a div {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 0.5em;
+    color: inherit;
+}
+
+.header-esq a:hover {
     background-color: #2B3034;
-    color: #FFFFFF;
+    color: #DAE5E7;
 }
 
+/* Parte do meio */
+.img-logo {
+    text-align: center;
+}
+.img-logo img {
+    height: 120px;
+    width: 180px; 
+ }
+
+/* Parte da direita */
 .header-dir {
-    height: 100%;
     display: flex;
     align-items: center;
-}
-
-.header-dir ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 100%;
-    margin-bottom: 30px;
+    justify-content: space-evenly;
 }
 
 .header-dir a {
-    width: 20px;
-    height: 20px;
-    margin-right: 80px;
-    transition: transform 0.3s;
-}
-
-.header-dir li {
-    width: 100%;
+    width: auto;
     height: 100%;
+    transition: transform 0.3s;
+    padding: 0 0.5em;
 }
 
-.header-dir li img {
+.header-dir a div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+
+.header-dir a div img {
     width: 55px;
     height: 55px;
     transition: width 0.3s, height 0.3s, transform 0.3s;
 }
 
 .header-dir a:hover {
-    transform: translateX(-5px);
+    transform: scale(1.2)
 }
-
-.header-dir li img:hover {
-    width: 65px;
-    height: 65px;
-    transform: translateY(-5px);
-}
-
-/* Imagem Logo do cabeçalho */
-
-.img-logo img {
-    position: absolute;
-    transform: translateX(42vw);
-    
-    height: 120px;
-    width: 180px; 
- }
 
  /* MAIN */
 
@@ -120,16 +102,24 @@ main h2 {
     font-size: 2rem;
 }
 
-/* ------banner-outono-------- */
+/* ------banner-namorados-------- */
 
-.banner-outono {
+.banner-namorados {
     height: 700px;
     justify-content: center;
 }  
 
-.banner-outono img {
+.banner-namorados img {
     height: 100%;
     width: 100%;
+}
+
+.banner-namorados-responsivo {
+    display: none;
+}
+
+.banner-namorados-responsivo img {
+    width: 100vw;
 }
 
 /* ---------galeria-------- */
@@ -156,8 +146,8 @@ main h2 {
 } 
 
 .galeria div {
-    width: 560px;
-    height: 557px;
+    width: 30vw;
+    height: 30vw;
     border-radius: 10px;
 }
 
@@ -190,6 +180,10 @@ main h2 {
     align-items: center;
     
     
+}
+
+.sobreNos-imagem h2 {
+    display: none;
 }
 
 .sobreNos-texto {
@@ -236,8 +230,8 @@ main h2 {
 .footer{
     background-color: #2b3034;
     width: 100vw;
-    height: 300px;
     padding: 3%;
+    gap: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -292,4 +286,157 @@ footer h1{
     font-size: 90%;
     width: 100vw;
     text-align: center;
+}
+
+/* Responsividade */
+
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .header-esq {
+        grid-area: mascfem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 50px;
+        justify-content: center;
+    }
+    
+    .header-esq a div {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background-color: #ced9db;
+    }
+    .img-logo {
+        grid-area: logo;
+    }
+    .img-logo img {
+        height: 90px;
+        width: 135px; 
+     }
+    .header-dir {
+        grid-area: botoes;
+        align-items: center;
+    }
+    .header-dir a div img {
+        width: 40px;
+        height: 40px;
+        transition: width 0.3s, height 0.3s, transform 0.3s;
+    }
+    header {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'logo botoes'
+                             'mascfem mascfem';
+    }
+    main {
+        padding: 0;
+    }
+    .banner-namorados {
+        display: none;
+    }
+    .banner-namorados-responsivo {
+        display: block;
+    }
+	.galeria div {
+        width: 300px;
+        height: 299px;
+    }  
+    .galeria {
+        row-gap: 5px;
+    }
+    .sobreNos-imagem {
+        margin-top: 2%;
+    }
+    .sobreNos-imagem h2 {
+        display: block;
+        color: #DAE5E7;
+        margin: 10px;
+    }
+    .sobreNos-imagem img {
+        display: none;
+    }
+    .quem-somos {
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+    .sobreNos-texto {
+        background-color: rgb(100, 100, 100, 0.15);
+        border: 1px solid rgb(255, 255, 255, 0.15);
+        
+    }
+    .footer{
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 50px;
+
+    }
+    .div-footer {
+        justify-content: center;
+        text-align: center;
+    }
+    .paragrafo {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-device-width : 481px) and (max-device-width : 800px) {
+    .header-esq {
+        grid-area: mascfem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 50px;
+        justify-content: center;
+    }
+    
+    .header-esq a div {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background-color: #ced9db;
+    }
+    .img-logo {
+        grid-area: logo;
+    }
+    .header-dir {
+        grid-area: botoes;
+        align-items: center;
+    }
+    header {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'logo botoes'
+                             'mascfem mascfem';
+    }
+	.galeria div {
+        width: 320px;
+        height: 318px;
+    }
+    .galeria {
+        row-gap: 10px;
+        column-gap: 5vw;
+        height: 680px;
+    }
+    .sobreNos-imagem img {
+        width: 30vw;
+        height: 30vw;
+    }
+    .sobreNos-texto {
+        background-color: rgb(100, 100, 100, 0.15);
+        border: 1px solid rgb(255, 255, 255, 0.15);
+        
+    }
+}
+
+@media screen and (min-device-width : 801px) and (max-device-width: 1270px) {
+	.galeria div {
+        width: 360px;
+        height: 358px;
+    }
+    .galeria {
+        column-gap: 5vw;
+        height: 680px;
+    }
+    .sobreNos-imagem img {
+        width: 30vw;
+        height: 30vw;
+    }
+    
 }
