@@ -305,6 +305,9 @@ footer h1{
         width: 100%;
         background-color: #ced9db;
     }
+    .header-esq a div:active {
+        background-color: #2B3034;
+    }
     .img-logo {
         grid-area: logo;
     }
